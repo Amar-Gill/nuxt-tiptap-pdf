@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@iconify-json/material-symbols": "^1.1.70",
+    "@iconify-json/tabler": "^1.1.104",
     "@vueuse/nuxt": "^10.7.2",
     "nuxt": "^3.9.1",
     "vue": "^3.4.10",

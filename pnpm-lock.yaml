@@ -19,6 +19,12 @@ dependencies:
     version: 2.1.16(@tiptap/core@2.1.16)(@tiptap/pm@2.1.16)(vue@3.4.13)
 
 devDependencies:
+  '@iconify-json/material-symbols':
+    specifier: ^1.1.70
+    version: 1.1.70
+  '@iconify-json/tabler':
+    specifier: ^1.1.104
+    version: 1.1.104
   '@vueuse/nuxt':
     specifier: ^10.7.2
     version: 10.7.2(nuxt@3.9.1)(vue@3.4.13)
@@ -623,6 +629,18 @@ packages:
       '@iconify/types': 2.0.0
     dev: false
 
+  /@iconify-json/material-symbols@1.1.70:
+    resolution: {integrity: sha512-7s71RCnGHyLbkwMjclraVKN32iAWNAitcm+aucpsrkh+aJBF8n8iy+i92jdLjuwoCMD5BQBCOAkBe9Nsysp6vg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/tabler@1.1.104:
+    resolution: {integrity: sha512-wULNz6HmRZSOUansZl57uI9PkE98QlkplIpalBEez56RtJ2Ygi30JqFNG+eSBRA8dYcYJG9TPNg6fcOV3TZYpA==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify/collections@1.0.380:
     resolution: {integrity: sha512-w4GPZQSP6Y+923InR6dUvJoAkq5VjnxOQJ1wcM0hnxLStRouBeF4hCz993bYL8yAPonVNCtXlgkIGzLzrTWOxQ==}
     dependencies:
@@ -631,7 +649,6 @@ packages:
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
 
   /@iconify/utils@2.1.14:
     resolution: {integrity: sha512-9pKIntkbLbjVVFxH32td21Am3AGGJfyI2KY2d8yDQxkZe4BBZtufJI8NgcamFn8B5QKLU9ai2VMo8OEov8jAtw==}
