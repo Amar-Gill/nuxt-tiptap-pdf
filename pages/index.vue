@@ -2,7 +2,12 @@
 
 <template>
   <UPage>
-    <UPageBody> Page: foo </UPageBody>
+    <UPageHeader title="Home Page" />
+    <UPageBody>
+      <div>
+        <TipTap :content="{}" />
+      </div>
+    </UPageBody>
   </UPage>
 </template>
 
