@@ -1,6 +1,8 @@
 <template>
   <UHeader>
-    <template #logo> Nuxt Tiptap PDF </template>
+    <template #logo>
+      Nuxt Tiptap PDF
+    </template>
     <template #right>
       <UColorModeButton />
     </template>
