@@ -7,12 +7,16 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.1.70",
     "@iconify-json/tabler": "^1.1.104",
+    "@nuxt/eslint-config": "^0.2.0",
     "@vueuse/nuxt": "^10.7.2",
+    "eslint": "^8.56.0",
     "nuxt": "^3.9.1",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
