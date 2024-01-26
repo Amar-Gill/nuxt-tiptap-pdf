@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['@nuxt/ui-pro'],
-  modules: ['@nuxt/ui', '@vueuse/nuxt'],
+  modules: ['@nuxt/ui', '@vueuse/nuxt', '@sidebase/nuxt-pdf'],
   ui: {
     icons: ['tabler', 'material-symbols'],
   },

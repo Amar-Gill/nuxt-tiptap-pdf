@@ -15,6 +15,7 @@
     "@iconify-json/material-symbols": "^1.1.70",
     "@iconify-json/tabler": "^1.1.104",
     "@nuxt/eslint-config": "^0.2.0",
+    "@sidebase/nuxt-pdf": "^0.1.2",
     "@vueuse/nuxt": "^10.7.2",
     "eslint": "^8.56.0",
     "nuxt": "^3.9.1",
