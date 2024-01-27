@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { type JSONContent } from '@tiptap/vue-3';
-
-const content = useState<JSONContent>('editorContent');
+const content = useEditorContent();
 </script>
 
 <template>
