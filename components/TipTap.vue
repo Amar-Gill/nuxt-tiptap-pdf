@@ -2,7 +2,10 @@
 import { useEditor, EditorContent, type JSONContent } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
 
-const props = defineProps<{ content: JSONContent | null }>();
+const props = withDefaults(
+  defineProps<{ content: JSONContent | null; delay: number }>(),
+  { content: null, delay: 1000 }
+);
 
 const emit = defineEmits<{
   (event: 'update', content?: JSONContent): void;
@@ -10,7 +13,7 @@ const emit = defineEmits<{
 
 const emitUpdateDebounced = useDebounceFn(
   () => emit('update', editor.value?.getJSON()),
-  1000
+  props.delay
 );
 
 const editor = useEditor({
