@@ -29,6 +29,7 @@ const impl0 = async () => {
         <TipTap
           ref="tiptap"
           :content="editorContent || {}"
+          :delay="300"
           @update="(c) => (editorContent = c)"
         >
           <UButton
