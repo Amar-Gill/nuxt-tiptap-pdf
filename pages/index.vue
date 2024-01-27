@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-import type { TipTap } from '#build/components';
+import { type JSONContent } from '@tiptap/vue-3';
+
+const editorContent = useState<JSONContent | undefined>(
+  'editorContent',
+  () => undefined,
+);
 
 const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
 
@@ -29,6 +34,7 @@ const impl0 = async () => {
         <TipTap
           ref="tiptap"
           :content="{}"
+          @update="(c) => (editorContent = c)"
         >
           <UButton
             label="impl0"
