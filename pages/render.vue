@@ -11,7 +11,13 @@ const pdfSection = ref<HTMLElement | null>(null);
 
 <template>
   <div>
-    <UButton @click="exportToPDF('my-pdf-file.pdf', pdfSection)">
+    <UButton
+      @click="
+        exportToPDF('my-pdf-file.pdf', pdfSection, {
+          orientation: 'p',
+        })
+      "
+    >
       impl1
     </UButton>
     <div
