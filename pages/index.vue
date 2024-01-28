@@ -19,6 +19,16 @@ const impl0 = async () => {
 
   window.open(URL.createObjectURL(blob), '_blank');
 };
+
+const impl2 = () => {
+  const htmlString = tiptap.value?.editor?.getHTML();
+
+  return $fetch('/api/pdf', {
+    query: {
+      htmlString,
+    },
+  });
+};
 </script>
 
 <template>
@@ -35,6 +45,10 @@ const impl0 = async () => {
           <UButton
             label="impl0"
             @click="impl0"
+          />
+          <UButton
+            label="impl2"
+            @click="impl2"
           />
         </TipTap>
       </div>
