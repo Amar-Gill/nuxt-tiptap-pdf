@@ -26,6 +26,7 @@
     "@nuxt/ui-pro": "^0.7.0",
     "@tiptap/pm": "^2.1.16",
     "@tiptap/starter-kit": "^2.1.16",
-    "@tiptap/vue-3": "^2.1.16"
+    "@tiptap/vue-3": "^2.1.16",
+    "puppeteer": "^21.9.0"
   }
 }
