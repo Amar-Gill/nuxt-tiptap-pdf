@@ -1,3 +1,4 @@
+import PDFMerger from 'pdf-merger-js';
 import puppeteer from 'puppeteer';
 
 const cssContent = `
@@ -60,30 +61,32 @@ hr {
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
 
+  const numPages = 3;
+
   console.log(query);
   try {
     const browser = await puppeteer.launch();
+    const merger = new PDFMerger();
 
-    const page = await browser.newPage();
+    for (let index = 0; index < numPages; index++) {
+      const page = await browser.newPage();
 
-    await page.setContent(query.htmlString?.toString(), {
-      waitUntil: 'networkidle0',
-    });
+      await page.setContent(query.htmlString?.toString(), {
+        waitUntil: 'networkidle0',
+      });
 
-    await page.emulateMediaType('screen');
+      await page.emulateMediaType('screen');
 
-    await page.addStyleTag({ content: cssContent });
+      await page.addStyleTag({ content: cssContent });
 
-    const pdf = await page.pdf({ path: 'output.pdf', format: 'a4' });
+      await merger.add(await page.pdf({ format: 'a4' }));
+    }
+
+    await merger.save('output.pdf');
 
     await browser.close();
 
-    setResponseHeaders(event, {
-      'Content-Type': 'application/pdf',
-      'Content-Length': pdf.length,
-    });
-
-    return pdf;
+    return { success: 'yes' };
   } catch (error) {
     console.error(error);
   }
