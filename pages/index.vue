@@ -3,6 +3,8 @@ const editorContent = useEditorContent();
 
 const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
 
+const pdfGenerating = ref(false);
+
 const impl0 = async () => {
   const htmlString = tiptap.value?.editor?.getHTML();
 
@@ -20,14 +22,18 @@ const impl0 = async () => {
   window.open(URL.createObjectURL(blob), '_blank');
 };
 
-const impl2 = () => {
+const impl2 = async () => {
+  pdfGenerating.value = true;
+
   const htmlString = tiptap.value?.editor?.getHTML();
 
-  return $fetch('/api/pdf', {
+  await $fetch('/api/pdf', {
     query: {
       htmlString,
     },
   });
+
+  pdfGenerating.value = false;
 };
 </script>
 
@@ -48,6 +54,7 @@ const impl2 = () => {
           />
           <UButton
             label="impl2"
+            :loading="pdfGenerating"
             @click="impl2"
           />
         </TipTap>
