@@ -4,7 +4,7 @@ import StarterKit from '@tiptap/starter-kit';
 
 const props = withDefaults(
   defineProps<{ content: JSONContent | null; delay: number }>(),
-  { content: null, delay: 1000 }
+  { content: null, delay: 1000 },
 );
 
 const emit = defineEmits<{
@@ -13,7 +13,7 @@ const emit = defineEmits<{
 
 const emitUpdateDebounced = useDebounceFn(
   () => emit('update', editor.value?.getJSON()),
-  props.delay
+  props.delay,
 );
 
 const editor = useEditor({
