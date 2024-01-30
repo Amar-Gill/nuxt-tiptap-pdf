@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useHTMLToPDF } from '~/utils/html-to-pdf';
+
 const editorContent = useEditorContent();
 
 const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
@@ -35,6 +37,12 @@ const impl2 = async () => {
 
   pdfGenerating.value = false;
 };
+
+const impl3 = async () => {
+  const htmlString = tiptap.value?.editor?.getHTML();
+
+  const x = useHTMLToPDF('abc', htmlString);
+};
 </script>
 
 <template>
@@ -56,6 +64,12 @@ const impl2 = async () => {
             label="impl2"
             :loading="pdfGenerating"
             @click="impl2"
+          />
+
+          <UButton
+            label="impl3"
+            :loading="pdfGenerating"
+            @click="impl3"
           />
         </TipTap>
       </div>
