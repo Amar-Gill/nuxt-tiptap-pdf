@@ -1,6 +1,6 @@
-import jsPDF, { type HTMLWorker } from 'jspdf';
+import jsPDF, { type HTMLWorker, type HTMLOptions } from 'jspdf';
 
-export const useHTMLToPDF = (
+export const useHTMLToPDF = async (
   filename: string,
   html: string | HTMLElement,
 ): HTMLWorker => {
@@ -13,13 +13,11 @@ export const useHTMLToPDF = (
     compress: true,
   });
 
-  return doc.html(html, {
-    callback: function (doc) {
-      doc.output('dataurlnewwindow');
-    },
+  const htmlOptions = {
     margin: [10, 10, 10, 10],
     image: { quality: 0.9, type: 'jpeg' },
-    autoPaging: 'text',
+    autoPaging: false,
+
     x: 0,
     y: 0,
     width: 190, //target width in the PDF document
@@ -28,6 +26,18 @@ export const useHTMLToPDF = (
       onclone(document) {
         document.documentElement.classList.add('exportToPDF');
       },
+    },
+  } satisfies HTMLOptions;
+
+  for (let index = 0; index < 3; index++) {
+    await doc.html(html, htmlOptions);
+    doc.addPage();
+  }
+
+  return doc.html(html, {
+    ...htmlOptions,
+    callback: function (doc) {
+      doc.output('dataurlnewwindow');
     },
   });
 };
