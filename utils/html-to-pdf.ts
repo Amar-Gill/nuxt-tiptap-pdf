@@ -15,7 +15,7 @@ export const useHTMLToPDF = (
 
   return doc.html(html, {
     callback: function (doc) {
-      doc.save(`${filename}.pdf`);
+      doc.output('dataurlnewwindow');
     },
     margin: [10, 10, 10, 10],
     image: { quality: 0.9, type: 'jpeg' },
