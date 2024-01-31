@@ -23,11 +23,13 @@ const pdfSection = ref<HTMLElement | null>(null);
     <UButton @click="() => useHTMLToPDF('lala', pdfSection)">
       Impl4
     </UButton>
-    <div
-      ref="pdfSection"
-      class="prose dark:prose-invert prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none"
-      v-html="htmlString"
-    />
+    <UCard>
+      <div
+        ref="pdfSection"
+        class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none bg-white p-1 rounded-md"
+        v-html="htmlString"
+      />
+    </UCard>
   </div>
 </template>
 
