@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* https://github.com/parallax/jsPDF/issues/3532 */
+@layer base {
+  img {
+    @apply inline-block;
+  }
+}
