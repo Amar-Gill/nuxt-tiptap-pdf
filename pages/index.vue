@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { useHTMLToPDF } from '~/utils/html-to-pdf';
-
 const editorContent = useEditorContent();
 
 const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
