@@ -15,7 +15,6 @@
     "@iconify-json/material-symbols": "^1.1.71",
     "@iconify-json/tabler": "^1.1.104",
     "@nuxt/eslint-config": "^0.2.0",
-    "@sidebase/nuxt-pdf": "^0.1.2",
     "@vueuse/nuxt": "^10.7.2",
     "eslint": "^8.56.0",
     "nuxt": "^3.9.3",
@@ -27,6 +26,7 @@
     "@tiptap/pm": "^2.1.16",
     "@tiptap/starter-kit": "^2.1.16",
     "@tiptap/vue-3": "^2.1.16",
+    "jspdf": "^2.5.1",
     "pdf-merger-js": "^5.1.1",
     "puppeteer": "^21.9.0"
   }

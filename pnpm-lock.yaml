@@ -17,6 +17,9 @@ dependencies:
   '@tiptap/vue-3':
     specifier: ^2.1.16
     version: 2.1.16(@tiptap/core@2.1.16)(@tiptap/pm@2.1.16)(vue@3.4.15)
+  jspdf:
+    specifier: ^2.5.1
+    version: 2.5.1
   pdf-merger-js:
     specifier: ^5.1.1
     version: 5.1.1
@@ -34,9 +37,6 @@ devDependencies:
   '@nuxt/eslint-config':
     specifier: ^0.2.0
     version: 0.2.0(eslint@8.56.0)
-  '@sidebase/nuxt-pdf':
-    specifier: ^0.1.2
-    version: 0.1.2
   '@vueuse/nuxt':
     specifier: ^10.7.2
     version: 10.7.2(nuxt@3.9.3)(vue@3.4.15)
@@ -346,6 +346,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
+    dev: false
 
   /@babel/standalone@7.23.9:
     resolution: {integrity: sha512-89NGhVfgKDqDQrtNPxqfnhIReKvp2CR80ofPNEAUpbtnouFelq33hQFURLralD9I+eFS7s5zVK61JRg/D1nLWg==}
@@ -1709,16 +1710,6 @@ packages:
     resolution: {integrity: sha512-RbhOOTCNoCrbfkRyoXODZp75MlpiHMgbE5MEBZAnnnLyQNgrigEj4p0lzsMDyc1zVsJDLrivB58tgg3emX0eEA==}
     dev: true
 
-  /@sidebase/nuxt-pdf@0.1.2:
-    resolution: {integrity: sha512-0wB0g4lIKQuRVKjuwkndtDuCQFvrf+7h/KJxgxSV6kDvABv8ACk69tFxaXsAx9MIg28G8mV3vE8lQ/g0WEEmSQ==}
-    dependencies:
-      '@nuxt/kit': 3.9.3
-      jspdf: 2.5.1
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
   /@sigstore/bundle@2.1.1:
     resolution: {integrity: sha512-v3/iS+1nufZdKQ5iAlQKcCsoh0jffQyABvYIxKsZQFWc4ubuGjwZklFHpDgV6O6T7vvV78SW5NHI91HFKEcxKg==}
     engines: {node: ^16.14.0 || >=18.0.0}
@@ -2096,7 +2087,7 @@ packages:
   /@types/raf@3.4.3:
     resolution: {integrity: sha512-c4YAvMedbPZ5tEyxzQdMoOhhJ4RD3rngZIdwC2/qDN3d7JpEhB6fiBRKVY1lg5B7Wk+uPBjn5f39j1/2MY1oOw==}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /@types/resolve@1.20.2:
@@ -2764,7 +2755,7 @@ packages:
     resolution: {integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==}
     engines: {node: '>= 4.5.0'}
     hasBin: true
-    dev: true
+    dev: false
 
   /autoprefixer@10.4.17(postcss@8.4.33):
     resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
@@ -2791,7 +2782,7 @@ packages:
     resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
     engines: {node: '>= 0.6.0'}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /base64-js@1.5.1:
@@ -2849,7 +2840,7 @@ packages:
     resolution: {integrity: sha512-SB4/MIGlsiVkMcHmT+pSmIPoNDoHg+7cMzmt3Uxt628MTz2487DKSqK/fuhFBrkuqrYv5UCEnACpF4dTFNKc/g==}
     engines: {node: '>= 0.4.0'}
     hasBin: true
-    dev: true
+    dev: false
 
   /buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -2960,7 +2951,7 @@ packages:
       rgbcolor: 1.0.1
       stackblur-canvas: 2.6.0
       svg-pathdata: 6.0.3
-    dev: true
+    dev: false
     optional: true
 
   /case-anything@2.1.13:
@@ -3169,7 +3160,7 @@ packages:
   /core-js@3.35.1:
     resolution: {integrity: sha512-IgdsbxNyMskrTFxa9lWHyMwAJU5gXOPP+1yO+K59d50VLVAIDAbs7gIv705KzALModfK3ZrSZTPNpC0PQgIZuw==}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /core-util-is@1.0.3:
@@ -3239,7 +3230,7 @@ packages:
     requiresBuild: true
     dependencies:
       utrie: 1.0.2
-    dev: true
+    dev: false
     optional: true
 
   /css-select@5.1.0:
@@ -3504,7 +3495,7 @@ packages:
   /dompurify@2.4.7:
     resolution: {integrity: sha512-kxxKlPEDa6Nc5WJi+qRgPbOAbgTpSULL+vI3NUXsZMlkJxTqYI9wg5ZTay2sFrdZRWHPWNi+EdAhcJf81WtoMQ==}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /domutils@3.1.0:
@@ -3871,7 +3862,7 @@ packages:
 
   /fflate@0.4.8:
     resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
-    dev: true
+    dev: false
 
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
@@ -4226,7 +4217,7 @@ packages:
     dependencies:
       css-line-break: 2.1.0
       text-segmentation: 1.0.3
-    dev: true
+    dev: false
     optional: true
 
   /http-assert@1.5.0:
@@ -4644,7 +4635,7 @@ packages:
       core-js: 3.35.1
       dompurify: 2.4.7
       html2canvas: 1.4.1
-    dev: true
+    dev: false
 
   /keygrip@1.1.0:
     resolution: {integrity: sha512-iYSchDJ+liQ8iwbSI2QqsQOvqv58eJCEanyJPJi+Khyu8smkcKSFUCbPwzFcL7YVtZ6eONjqRX/38caJ7QjRAQ==}
@@ -5854,7 +5845,7 @@ packages:
   /performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /picocolors@1.0.0:
@@ -6518,7 +6509,7 @@ packages:
     requiresBuild: true
     dependencies:
       performance-now: 2.1.0
-    dev: true
+    dev: false
     optional: true
 
   /randombytes@2.1.0:
@@ -6602,11 +6593,12 @@ packages:
   /regenerator-runtime@0.13.11:
     resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
+    dev: false
 
   /replace-in-file@6.3.5:
     resolution: {integrity: sha512-arB9d3ENdKva2fxRnSjwBEXfK1npgyci7ZZuwysgAp7ORjHSyxz6oqIjTEv8R0Ydl4Ll7uOAZXL4vbkhGIizCg==}
@@ -6658,7 +6650,7 @@ packages:
     resolution: {integrity: sha512-9aZLIrhRaD97sgVhtJOW6ckOEh6/GnvQtdVNfdZ6s67+3/XwLS9lBcQYzEEhYVeUowN7pRzMLsyGhK2i/xvWbw==}
     engines: {node: '>= 0.8.15'}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /rimraf@3.0.2:
@@ -6930,7 +6922,7 @@ packages:
     resolution: {integrity: sha512-8S1aIA+UoF6erJYnglGPug6MaHYGo1Ot7h5fuXx4fUPvcvQfcdw2o/ppCse63+eZf8PPidSu4v1JnmEVtEDnpg==}
     engines: {node: '>=0.1.14'}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /standard-as-callback@2.1.0:
@@ -7063,7 +7055,7 @@ packages:
     resolution: {integrity: sha512-qsjeeq5YjBZ5eMdFuUa4ZosMLxgr5RZ+F+Y1OrDhuOCEInRMA3x74XdBtggJcj9kOeInz0WE+LgCPDkZFlBYJw==}
     engines: {node: '>=12.0.0'}
     requiresBuild: true
-    dev: true
+    dev: false
     optional: true
 
   /svg-tags@1.0.0:
@@ -7188,7 +7180,7 @@ packages:
     requiresBuild: true
     dependencies:
       utrie: 1.0.2
-    dev: true
+    dev: false
     optional: true
 
   /text-table@0.2.0:
@@ -7560,7 +7552,7 @@ packages:
     requiresBuild: true
     dependencies:
       base64-arraybuffer: 1.0.2
-    dev: true
+    dev: false
     optional: true
 
   /validate-npm-package-license@3.0.4:
