@@ -37,7 +37,7 @@ export const useHTMLToPDF = async (
   return doc.html(html, {
     ...htmlOptions,
     callback: function (doc) {
-      doc.output('dataurlnewwindow');
+      doc.output('dataurlnewwindow', { filename });
     },
   });
 };
