@@ -1,8 +1,6 @@
-<script setup lang="ts">
-const links = [{ to: '/render', label: 'render' }];
-</script>
+<script setup lang="ts"></script>
 <template>
-  <UHeader :links="links">
+  <UHeader>
     <template #logo>
       Nuxt Tiptap PDF
     </template>
