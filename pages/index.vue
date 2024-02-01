@@ -24,7 +24,7 @@ const generatePdf = async () => {
     'focus:outline-none',
   );
 
-  const x = await useHTMLToPDF('hohoho', el);
+  const x = await convertHTMLToPDF('hohoho', el);
 
   pdfGenerating.value = false;
 };

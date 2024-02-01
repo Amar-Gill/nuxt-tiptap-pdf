@@ -1,6 +1,6 @@
 import jsPDF, { type HTMLWorker, type HTMLOptions } from 'jspdf';
 
-export const useHTMLToPDF = async (
+export const convertHTMLToPDF = async (
   filename: string,
   html: string | HTMLElement,
 ): HTMLWorker => {
