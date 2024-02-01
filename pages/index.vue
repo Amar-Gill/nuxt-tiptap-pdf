@@ -43,6 +43,31 @@ const impl3 = async () => {
 
   const x = useHTMLToPDF('abc', htmlString);
 };
+
+// I like this one
+const impl5 = async () => {
+  pdfGenerating.value = true;
+
+  const htmlString = tiptap.value?.editor?.getHTML();
+
+  const el = document.createElement('div');
+
+  el.innerHTML = htmlString;
+
+  el.classList.add(
+    'prose',
+    'prose-sm',
+    'sm:prose-base',
+    'lg:prose-lg',
+    'xl:prose-2xl',
+    'm-5',
+    'focus:outline-none',
+  );
+
+  const x = await useHTMLToPDF('hohoho', el);
+
+  pdfGenerating.value = false;
+};
 </script>
 
 <template>
@@ -70,6 +95,11 @@ const impl3 = async () => {
             label="impl3"
             :loading="pdfGenerating"
             @click="impl3"
+          />
+          <UButton
+            label="impl5"
+            :loading="pdfGenerating"
+            @click="impl5"
           />
         </TipTap>
       </div>
