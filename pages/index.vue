@@ -7,7 +7,7 @@ const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
 
 const pdfGenerating = ref(false);
 
-const impl5 = async () => {
+const generatePdf = async () => {
   pdfGenerating.value = true;
 
   const htmlString = tiptap.value?.editor?.getHTML();
@@ -46,7 +46,7 @@ const impl5 = async () => {
           <UButton
             label="impl5"
             :loading="pdfGenerating"
-            @click="impl5"
+            @click="generatePdf"
           />
         </TipTap>
       </div>
