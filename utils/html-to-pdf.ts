@@ -3,6 +3,7 @@ import jsPDF, { type HTMLWorker, type HTMLOptions } from 'jspdf';
 export const convertHTMLToPDF = async (
   filename: string,
   html: string | HTMLElement,
+  numPages = 3,
 ): HTMLWorker => {
   const doc = new jsPDF({
     orientation: 'portrait',
@@ -29,7 +30,7 @@ export const convertHTMLToPDF = async (
     },
   } satisfies HTMLOptions;
 
-  for (let index = 0; index < 3; index++) {
+  for (let index = 1; index < numPages; index++) {
     await doc.html(html, htmlOptions);
     doc.addPage();
   }
