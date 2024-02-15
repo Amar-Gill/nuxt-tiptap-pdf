@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import type { TipTap } from '#build/components';
+
 const editorContent = useEditorContent();
 
 const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
