@@ -7,6 +7,8 @@ const tiptap = ref<InstanceType<typeof TipTap> | null>(null);
 
 const pdfGenerating = ref(false);
 
+const numPages = ref(1);
+
 const generatePdf = async () => {
   pdfGenerating.value = true;
 
@@ -26,7 +28,7 @@ const generatePdf = async () => {
     'focus:outline-none',
   );
 
-  const x = await convertHTMLToPDF('hohoho', el);
+  const x = await convertHTMLToPDF('hohoho', el, numPages.value);
 
   pdfGenerating.value = false;
 };
@@ -48,6 +50,15 @@ const generatePdf = async () => {
             :loading="pdfGenerating"
             @click="generatePdf"
           />
+          Num Pages: {{ numPages }}
+          <UButtonGroup>
+            <UButton @click="numPages++">
+              +
+            </UButton>
+            <UButton @click="numPages--">
+              -
+            </UButton>
+          </UButtonGroup>
         </TipTap>
       </div>
     </UPageBody>
