@@ -46,7 +46,8 @@ const generatePdf = async () => {
           @update="(c) => (editorContent = c)"
         >
           <UButton
-            label="impl5"
+            label="Generate PDF"
+            icon="i-tabler-file-type-pdf"
             :loading="pdfGenerating"
             @click="generatePdf"
           />
