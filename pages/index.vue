@@ -24,8 +24,8 @@ const generatePdf = async () => {
     'sm:prose-base',
     'lg:prose-lg',
     'xl:prose-2xl',
-    'm-5',
-    'focus:outline-none',
+    'm-24',
+    'text-zinc-700',
   );
 
   const x = await convertHTMLToPDF('hohoho', el, numPages.value);

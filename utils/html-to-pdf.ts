@@ -15,7 +15,6 @@ export const convertHTMLToPDF = async (
   });
 
   const htmlOptions = {
-    margin: [10, 10, 10, 10],
     image: { quality: 0.9, type: 'jpeg' },
     autoPaging: false,
 
