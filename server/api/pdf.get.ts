@@ -63,9 +63,10 @@ export default defineEventHandler(async (event) => {
 
   const numPages = 3;
 
+  const browser = await puppeteer.launch();
+
   console.log(query);
   try {
-    const browser = await puppeteer.launch();
     const merger = new PDFMerger();
 
     for (let index = 0; index < numPages; index++) {
@@ -82,11 +83,8 @@ export default defineEventHandler(async (event) => {
       await merger.add(await page.pdf({ format: 'a4' }));
     }
 
-    await merger.save('output.pdf');
-
-    await browser.close();
-
-    return { success: 'yes' };
+    setHeader(event, 'Content-Type', 'application/pdf');
+    return merger.saveAsBuffer();
   } catch (error) {
     console.error(error);
   }

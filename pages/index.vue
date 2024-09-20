@@ -60,6 +60,12 @@ const generatePdf = async () => {
               -
             </UButton>
           </UButtonGroup>
+          <a
+            :href="`/api/pdf?htmlString=${tiptap?.editor?.getHTML()}`"
+            target="_blank"
+          >
+            Puppeteer
+          </a>
         </TipTap>
       </div>
     </UPageBody>
