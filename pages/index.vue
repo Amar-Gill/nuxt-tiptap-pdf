@@ -66,6 +66,10 @@ const generatePdf = async () => {
           >
             Puppeteer
           </a>
+          <a
+            href="/lorem.pdf"
+            target="_blank"
+          >lorem</a>
         </TipTap>
       </div>
     </UPageBody>
